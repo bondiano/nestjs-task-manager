@@ -33,6 +33,7 @@
     "nestjs-graceful-shutdown": "^1.0.0",
     "nestjs-pino": "^3.3.0",
     "pino-http": "^8.3.3",
+    "pino-pretty": "^10.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
     "type-fest": "^3.12.0"

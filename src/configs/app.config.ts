@@ -1,4 +1,4 @@
-import { IsEnum, IsPort, IsString } from 'class-validator';
+import { IsEnum, IsNumber, IsPort, IsString } from 'class-validator';
 
 import { Inject } from '@nestjs/common';
 import { registerAs, ConfigType } from '@nestjs/config';
@@ -9,7 +9,7 @@ export class AppEnvironmentVariables {
   @IsEnum(Environment)
   NODE_ENV: Environment;
 
-  @IsPort()
+  @IsNumber()
   APP_PORT: number;
 
   @IsString()

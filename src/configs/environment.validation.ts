@@ -11,7 +11,7 @@ export const validate =
       }) as string;
       const error = validateSync(config, { skipMissingProperties: false });
       if (error.length > 0) {
-        throw new Error(error.toString());
+        throw error;
       }
     }
 
