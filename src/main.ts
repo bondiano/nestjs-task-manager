@@ -13,6 +13,9 @@ import {
 
 import { AppModule } from './app/app.module';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare const module: { hot: any };
+
 const GLOBAL_PREFIX = 'api';
 
 async function bootstrap() {
@@ -56,6 +59,11 @@ async function bootstrap() {
   Logger.log(
     `🚀 Application is running on: http://${host}:${port}/${GLOBAL_PREFIX}`
   );
+
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
 }
 
 bootstrap();

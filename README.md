@@ -4,8 +4,31 @@
 
 It's a simple API example using NestJS framework.
 
+## Requirements
+
+* [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/)
+* [Git](https://gitlab.com/help/topics/git/index.md)
+* [Node.js](https://nodejs.org/en/) (it is recommended to use [`n`](https://github.com/tj/n) for version management)
+* [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
+
 ## Installation
 
 ```bash
 $ yarn
+```
+
+## Running the app
+
+To run the app in development mode:
+
+```bash
+$ make up
+
+$ yarn dev
+```
+
+## Build
+
+```bash
+make build-api-image
 ```

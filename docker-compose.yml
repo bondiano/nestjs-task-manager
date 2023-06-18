@@ -1,0 +1,106 @@
+services:
+  api:
+    profiles:
+      - local
+    container_name: nestjs-task-management_api
+    build:
+      context: .
+    env_file:
+      - ./.env
+    ports:
+      - "3322:3322"
+    networks:
+      - app
+      - database
+    links:
+      - db
+      - redis
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:15.2
+    container_name: nestjs-task-management_db
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "5435:5432"
+    networks:
+      - database
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: nestjs-task-management_pgadmin
+    profiles:
+      - monitoring
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    networks:
+      - database
+    restart: unless-stopped
+    depends_on:
+      - db
+
+  swagger:
+    image: swaggerapi/swagger-ui:v4.18.0
+    platform: linux/amd64
+    container_name: nestjs-task-management_swagger
+    profiles:
+      - monitoring
+    environment:
+      SWAGGER_JSON: /app/openapi.yaml
+    networks:
+      - app
+    ports:
+      - "5051:8080"
+    volumes:
+      - ./openapi.yaml:/app/openapi.yaml
+
+  redis:
+    image: redis:7.0.9
+    container_name: nestjs-task-management_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - database
+    volumes:
+      - redisdata:/data
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: nestjs-task-management_redis-commander
+    restart: unless-stopped
+    profiles:
+      - monitoring
+    healthcheck:
+      disable: true
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    networks:
+      - database
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+
+volumes:
+  pgdata:
+  pgadmin:
+  redisdata:
+
+networks:
+  app:
+    driver: bridge
+  database:
+    driver: bridge

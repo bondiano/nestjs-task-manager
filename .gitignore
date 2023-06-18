@@ -4,7 +4,6 @@
 /dist
 /tmp
 /out-tsc
-/apps/api/dist
 
 # dependencies
 node_modules
@@ -42,6 +41,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+/generated
 .nestjs_repl_history
 *.hide
 dump.db
