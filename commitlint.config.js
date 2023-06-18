@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@commitlint/config-conventional', '@commitlint/config-nx-scopes'],
+  extends: ['@commitlint/config-conventional'],
   rules: {
     'subject-case': [2, 'always', ['start-case', 'lower-case']],
     'type-enum': [
