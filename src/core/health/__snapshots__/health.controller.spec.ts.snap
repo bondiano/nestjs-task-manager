@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HealthController should check health 1`] = `
+[
+  {
+    "database": {
+      "status": "up",
+    },
+  },
+  {
+    "memory_rss": {
+      "status": "up",
+    },
+  },
+]
+`;

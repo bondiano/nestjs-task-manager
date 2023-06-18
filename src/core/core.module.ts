@@ -12,6 +12,8 @@ import {
   validate,
 } from '@api/configs';
 
+import { HealthModule } from './health/health.module';
+
 @Module({
   imports: [
     GracefulShutdownModule.forRoot(),
@@ -23,6 +25,7 @@ import {
       cache: true,
     }),
     LoggerModule.forRootAsync(loggerConfig.asProvider()),
+    HealthModule,
   ],
 })
 export class CoreModule {}
