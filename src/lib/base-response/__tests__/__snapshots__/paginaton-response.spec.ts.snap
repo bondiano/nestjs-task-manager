@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationResponse should build correct schema 1`] = `
+{
+  "properties": {
+    "payload": {
+      "properties": {
+        "data": {
+          "items": {
+            "$ref": "#/components/schemas/PostResponse",
+          },
+          "type": "array",
+        },
+        "meta": {
+          "$ref": "#/components/schemas/PageMetaDto",
+        },
+      },
+      "type": "object",
+    },
+    "success": {
+      "type": "boolean",
+    },
+  },
+  "type": "object",
+}
+`;

@@ -6,7 +6,7 @@ import {
 } from '@nestjs/terminus';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { HealthController } from './health.controller';
+import { HealthController } from '../health.controller';
 
 const getStatus = (key: string) => ({ [key]: { status: 'up' } });
 

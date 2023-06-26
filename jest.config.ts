@@ -1,20 +1,16 @@
 import type { JestConfigWithTsJest } from 'ts-jest';
 
 export default {
+  preset: 'ts-jest',
   displayName: 'api',
   testEnvironment: 'node',
-  transform: {
-    '^.+\\.[tj]s$': [
-      'ts-jest',
-      {
-        tsconfig: '<rootDir>/tsconfig.json',
-      },
-    ],
-  },
   setupFilesAfterEnv: ['@relmify/jest-fp-ts'],
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: './coverage',
   reporters: ['default'],
+  moduleNameMapper: {
+    '^@api/(.*)$': '<rootDir>/src/$1',
+  },
   collectCoverageFrom: [
     'src/**/*.ts',
     '!src/migrations/*.ts',

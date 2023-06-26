@@ -814,6 +814,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@golevelup/ts-jest@npm:^0.3.7":
+  version: 0.3.7
+  resolution: "@golevelup/ts-jest@npm:0.3.7"
+  checksum: e1c17b32bd37accd40f778357f65b44ac1c66f9c9cb5c25f515aff0bf324807029eb042586e06bd32a4cb4bd3b1cc4ff056fd7ab9a6ba08301ead1eff99446fb
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.10":
   version: 0.11.10
   resolution: "@humanwhocodes/config-array@npm:0.11.10"
@@ -1890,6 +1897,13 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: e60b153664572116dfea673c5bda7778dbff150498f44f998e34b5886d8afc47f16799280e4b6e241c0472aef1bc36add771c569c68fc5125fc2ae519a3eb9ac
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4.14.195":
+  version: 4.14.195
+  resolution: "@types/lodash@npm:4.14.195"
+  checksum: 39b75ca635b3fa943d17d3d3aabc750babe4c8212485a4df166fe0516e39288e14b0c60afc6e21913cc0e5a84734633c71e617e2bd14eaa1cf51b8d7799c432e
   languageName: node
   linkType: hard
 
@@ -8528,6 +8542,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.6.5
     "@fastify/cookie": ^8.3.0
     "@fastify/helmet": ^10.1.1
+    "@golevelup/ts-jest": ^0.3.7
     "@nestjs/cli": ^10.0.2
     "@nestjs/common": ^10.0.0
     "@nestjs/config": ^3.0.0
@@ -8542,6 +8557,7 @@ __metadata:
     "@relmify/jest-fp-ts": ^2.1.1
     "@types/express": ^4.17.17
     "@types/jest": ^29.5.2
+    "@types/lodash": ^4.14.195
     "@types/node": 20.3.1
     "@types/pg": ^8
     "@types/supertest": ^2.0.12
