@@ -1,13 +1,8 @@
 {
   "compilerOptions": {
     "strict": true,
-    "types": [
-      "node",
-      "jest"
-    ],
-    "lib": [
-      "es2021"
-    ],
+    "types": ["node", "jest"],
+    "lib": ["es2021"],
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
@@ -29,12 +24,7 @@
       "@api/*": ["src/*"]
     }
   },
-  "include": [
-    "**/*.ts",
-    "global.d.ts",
-    "jest.config.ts",
-    "ormconfig.ts"
-  ],
+  "include": ["**/*.ts", "global.d.ts", "jest.config.ts", "ormconfig.ts"],
   "ts-node": {
     "require": ["tsconfig-paths/register"]
   }

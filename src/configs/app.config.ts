@@ -1,4 +1,4 @@
-import { IsEnum, IsNumber, IsPort, IsString } from 'class-validator';
+import { IsEnum, IsNumber, IsString } from 'class-validator';
 
 import { Inject } from '@nestjs/common';
 import { registerAs, ConfigType } from '@nestjs/config';
