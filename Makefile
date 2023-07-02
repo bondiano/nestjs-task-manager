@@ -6,7 +6,13 @@ migrate:
 	yarn nx run api:migration:run
 
 test:
-	yarn affected:test
+	yarn test
+
+test-coverage:
+	yarn test --coverage
+
+lint:
+	yarn lint
 
 install:
 	yarn install --immutable
