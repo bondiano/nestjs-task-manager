@@ -1,3 +1,4 @@
+/* eslint-disable node/no-unpublished-require */
 const { RunScriptWebpackPlugin } = require('run-script-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 

@@ -10,6 +10,7 @@ export default {
   reporters: ['default'],
   moduleNameMapper: {
     '^@api/(.*)$': '<rootDir>/src/$1',
+    '^@test/(.*)$': '<rootDir>/test/$1',
   },
   collectCoverageFrom: [
     'src/**/*.ts',

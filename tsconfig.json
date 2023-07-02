@@ -21,7 +21,8 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@api/*": ["src/*"]
+      "@api/*": ["src/*"],
+      "@test/*": ["test/*"]
     }
   },
   "include": ["**/*.ts", "global.d.ts", "jest.config.ts", "ormconfig.ts"],

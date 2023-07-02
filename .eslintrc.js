@@ -12,7 +12,7 @@ module.exports = {
     jest: true,
   },
   settings: {
-    'import/internal-regex': '^@api(\\/|$)',
+    'import/internal-regex': '^@(api|test)(\\/|$)',
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
@@ -21,6 +21,7 @@ module.exports = {
   },
   plugins: ['import', 'lodash'],
   extends: [
+    'plugin:node/recommended',
     'plugin:prettier/recommended',
     'plugin:sonarjs/recommended',
     'plugin:unicorn/recommended',
@@ -80,6 +81,7 @@ module.exports = {
     'node/no-unsupported-features/es-syntax': OFF,
     'node/no-missing-import': OFF,
     'node/no-unpublished-import': OFF,
+    'node/no-extraneous-import': OFF,
     'sonarjs/no-duplicate-string': OFF,
     'unicorn/prefer-ternary': OFF,
     'unicorn/prefer-top-level-await': OFF,
